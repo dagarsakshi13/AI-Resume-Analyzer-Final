@@ -16,6 +16,7 @@ load_dotenv()
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
+
 print(
     "OpenRouter Key Loaded:",
     OPENROUTER_API_KEY[:10] if OPENROUTER_API_KEY else "NOT FOUND"
@@ -260,6 +261,10 @@ Professional format.
         ],
         "max_tokens": 1000
     }
+
+    print("API KEY:", OPENROUTER_API_KEY)
+    print("HEADERS:", headers)
+
 
     response = requests.post(
         "https://openrouter.ai/api/v1/chat/completions",
