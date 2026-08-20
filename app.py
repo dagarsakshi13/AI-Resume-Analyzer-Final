@@ -104,18 +104,11 @@ def login():
 
         user = User.query.filter_by(username=username).first()
 
-    print("Username:", username)
-    print("User Found:", user)
-
-    if user:
-        print("Password Match:", bcrypt.check_password_hash(user.password, password))
-
         if user and bcrypt.check_password_hash(user.password, password):
 
             login_user(user)
 
-            return "Login Successful"
-        
+            return redirect(url_for("home"))        
         flash("Invalid Username or Password")
 
     return render_template("login.html")
@@ -342,4 +335,4 @@ with app.app_context():
 
 if __name__ == "__main__":
 
-    app.run(debug=True)
+    app.run(debug=false)

@@ -1,3 +1,5 @@
 .env
 uploads/
 instance/
+users.db
+_pycache__/
